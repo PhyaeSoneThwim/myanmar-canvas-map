@@ -14,7 +14,8 @@ const App = () => {
   const defaultContent = {
     color: "",
     title: "",
-    value: "",
+    maleCount: 0,
+    femaleCount: 0,
     label: "",
   };
   const [content, setContent] = useState(defaultContent);
@@ -28,7 +29,8 @@ const App = () => {
           ></div>
           <span className="ml-2">{content.label}</span>
         </div>
-        <div>Total Count - 250</div>
+        <p>Male Count - {content.maleCount}</p>
+        <p>Female Count - {content.femaleCount}</p>
       </ReactTooltip>
       <ComposableMap width={500} projection="geoMercator" data-tip="">
         <ZoomableGroup
@@ -48,6 +50,8 @@ const App = () => {
                         ...defaultContent,
                         label: NAME_1,
                         color: COLORS[NAME_1].default,
+                        maleCount: COLORS[NAME_1].male,
+                        femaleCount: COLORS[NAME_1].female,
                       });
                     }}
                     onMouseLeave={() => {

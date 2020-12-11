@@ -1,62 +1,92 @@
 export const COLORS = {
-	Ayeyarwady: {
-		default: "#FECDD3",
-		hover: "#FDA4AF",
-	},
-	Bago: {
-		default: "#FEF08A",
-		hover: "#FDE047",
-	},
-	Chin: {
-		default: "#A7F3D0",
-		hover: "#6EE7B7",
-	},
-	Kachin: {
-		default: "#FECACA",
-		hover: "#FCA5A5",
-	},
-	Kayah: {
-		default: "#DDD6FE",
-		hover: "#C4B5FD",
-	},
-	Kayin: {
-		default: "#C7D2FE",
-		hover: "#A5B4FC",
-	},
-	Magway: {
-		default: "#FBCFE8",
-		hover: "#F9A8D4",
-	},
-	Mandalay: {
-		default: "#D9F99D",
-		hover: "#BEF264",
-	},
-	Mon: {
-		default: "#A5F3FC",
-		hover: "#67E8F9",
-	},
-	Naypyitaw: {
-		default: "#FEF08A",
-		hover: "#FDE047",
-	},
-	Rakhine: {
-		default: "#BBF7D0",
-		hover: "#86EFAC",
-	},
-	Sagaing: {
-		default: "#FDE68A",
-		hover: "#FCD34D",
-	},
-	Shan: {
-		default: "#FED7AA",
-		hover: "#FDBA74",
-	},
-	Tanintharyi: {
-		default: "#E9D5FF",
-		hover: "#D8B4FE",
-	},
-	Yangon: {
-		default: "#F5D0FE",
-		hover: "#F0ABFC",
-	},
+  Ayeyarwady: {
+    default: "#FECDD3",
+    hover: "#FDA4AF",
+    male: 30,
+    female: 40,
+  },
+  Bago: {
+    default: "#FEF08A",
+    hover: "#FDE047",
+    male: 40,
+    female: 46,
+  },
+  Chin: {
+    default: "#A7F3D0",
+    hover: "#6EE7B7",
+    male: 10,
+    female: 16,
+  },
+  Kachin: {
+    default: "#FECACA",
+    hover: "#FCA5A5",
+    male: 21,
+    female: 6,
+  },
+  Kayah: {
+    default: "#DDD6FE",
+    hover: "#C4B5FD",
+    male: 30,
+    female: 64,
+  },
+  Kayin: {
+    default: "#C7D2FE",
+    hover: "#A5B4FC",
+    male: 20,
+    female: 14,
+  },
+  Magway: {
+    default: "#FBCFE8",
+    hover: "#F9A8D4",
+    male: 30,
+    female: 21,
+  },
+  Mandalay: {
+    default: "#D9F99D",
+    hover: "#BEF264",
+    male: 20,
+    female: 10,
+  },
+  Mon: {
+    default: "#A5F3FC",
+    hover: "#67E8F9",
+    male: 20,
+    female: 11,
+  },
+  Naypyitaw: {
+    default: "#FEF08A",
+    hover: "#FDE047",
+    male: 30,
+    female: 13,
+  },
+  Rakhine: {
+    default: "#BBF7D0",
+    hover: "#86EFAC",
+    male: 25,
+    female: 15,
+  },
+  Sagaing: {
+    default: "#FDE68A",
+    hover: "#FCD34D",
+    male: 25,
+    female: 15,
+  },
+  Shan: {
+    default: "#FED7AA",
+    hover: "#FDBA74",
+    male: 25,
+    female: 15,
+  },
+  Tanintharyi: {
+    default: "#E9D5FF",
+    hover: "#D8B4FE",
+    male: 25,
+    female: 15,
+  },
+  Yangon: {
+    default: "#F5D0FE",
+    hover: "#F0ABFC",
+    male: 25,
+    female: 15,
+  },
 };
