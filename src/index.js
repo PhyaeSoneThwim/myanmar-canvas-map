@@ -11,10 +11,25 @@ import map from "./map.json";
 import { COLORS } from "./constants";
 
 const App = () => {
-  const [content, setContent] = useState("");
+  const defaultContent = {
+    color: "",
+    title: "",
+    value: "",
+    label: "",
+  };
+  const [content, setContent] = useState(defaultContent);
   return (
     <div style={{ width: "30%" }}>
-      <ReactTooltip>{content}</ReactTooltip>
+      <ReactTooltip className="px-2 rounded-lg" type="dark">
+        <div className="inline-flex items-center">
+          <div
+            style={{ backgroundColor: content.color }}
+            className="w-3 h-3 inline-block rounded-full"
+          ></div>
+          <span className="ml-2">{content.label}</span>
+        </div>
+        <div>Total Count - 250</div>
+      </ReactTooltip>
       <ComposableMap width={500} projection="geoMercator" data-tip="">
         <ZoomableGroup
           disablePanning
@@ -29,10 +44,14 @@ const App = () => {
                   <Geography
                     onMouseEnter={() => {
                       const { NAME_1 = "" } = geo.properties;
-                      setContent(`${NAME_1}`);
+                      setContent({
+                        ...defaultContent,
+                        label: NAME_1,
+                        color: COLORS[NAME_1].default,
+                      });
                     }}
                     onMouseLeave={() => {
-                      setContent("");
+                      setContent(defaultContent);
                     }}
                     fill={COLORS[geo.properties.NAME_1].default}
                     style={{
