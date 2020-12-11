@@ -8,29 +8,29 @@ import {
   ZoomableGroup,
 } from "react-simple-maps";
 import map from "./map.json";
-import { COLORS } from "./constants";
+import { COLORS, DATA } from "./constants";
 
 const App = () => {
-  const defaultContent = {
-    color: "",
-    title: "",
-    maleCount: 0,
-    femaleCount: 0,
+  const [content, setContent] = useState({
+    open: false,
     label: "",
-  };
-  const [content, setContent] = useState(defaultContent);
+  });
   return (
     <div style={{ width: "30%" }}>
       <ReactTooltip className="px-2 rounded-lg" type="dark">
-        <div className="inline-flex items-center">
-          <div
-            style={{ backgroundColor: content.color }}
-            className="w-3 h-3 inline-block rounded-full"
-          ></div>
-          <span className="ml-2">{content.label}</span>
-        </div>
-        <p>Male Count - {content.maleCount}</p>
-        <p>Female Count - {content.femaleCount}</p>
+        {content.open && (
+          <>
+            <div className="inline-flex items-center">
+              <div
+                style={{ backgroundColor: COLORS[content.label].default }}
+                className="w-3 h-3 inline-block rounded-full"
+              ></div>
+              <span className="ml-2">{content.label}</span>
+            </div>
+            <p>Male Count - {DATA[content.label].male}</p>
+            <p>Female Count - {DATA[content.label].female}</p>
+          </>
+        )}
       </ReactTooltip>
       <ComposableMap width={500} projection="geoMercator" data-tip="">
         <ZoomableGroup
@@ -47,15 +47,18 @@ const App = () => {
                     onMouseEnter={() => {
                       const { NAME_1 = "" } = geo.properties;
                       setContent({
-                        ...defaultContent,
+                        ...content,
+                        open: true,
                         label: NAME_1,
-                        color: COLORS[NAME_1].default,
                         maleCount: COLORS[NAME_1].male,
                         femaleCount: COLORS[NAME_1].female,
                       });
                     }}
                     onMouseLeave={() => {
-                      setContent(defaultContent);
+                      setContent({
+                        ...content,
+                        open: false,
+                      });
                     }}
                     fill={COLORS[geo.properties.NAME_1].default}
                     style={{
